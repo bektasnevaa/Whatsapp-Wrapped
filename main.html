@@ -4,277 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ChatWrapped</title>
-  <style>
-  * {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #111111;
-  color: white;
-}
-
-.app {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 30px 0;
-}
-
-.hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-card {
-  background-color: #1c1c1c;
-  border: 1px solid #333333;
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 700px;
-}
-
-.tag {
-  color: white;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-h1 {
-  font-size: 60px;
-  margin: 10px 0;
-  color: green;
-}
-
-.subtitle {
-  color: #cccccc;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.upload-box {
-  margin-top: 25px;
-  padding: 20px;
-  background-color: #252525;
-  border-radius: 15px;
-}
-
-input[type="file"] {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 12px;
-  background-color: #333333;
-  color: white;
-  border: none;
-  border-radius: 10px;
-}
-
-button {
-  background-color: green;
-  color: black;
-  border: none;
-  border-radius: 20px;
-  padding: 12px 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ffb86c;
-}
-
-.privacy {
-  color: #aaaaaa;
-  font-size: 13px;
-  margin-top: 12px;
-}
-
-.error {
-  display: none;
-  background-color: #4b1f1f;
-  color: #ffcccc;
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-
-.dashboard {
-  display: none;
-}
-
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.top-bar h2 {
-  font-size: 40px;
-  margin: 0;
-}
-
-.reset-btn {
-  background-color: #333333;
-  color: white;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.card {
-  background-color: #1c1c1c;
-  border: 1px solid #333333;
-  border-radius: 15px;
-  padding: 20px;
-}
-
-.big-card {
-  grid-column: span 2;
-}
-
-.card-label {
-  color: #aaaaaa;
-  font-size: 13px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.stat-number {
-  font-size: 38px;
-  font-weight: bold;
-  color: #ff8c42;
-}
-
-.stat-text {
-  font-size: 18px;
-  color: #eeeeee;
-}
-
-.mini-note {
-  color: #bbbbbb;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.section-title {
-  font-size: 28px;
-  margin-top: 35px;
-  margin-bottom: 15px;
-}
-
-.awards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.award-emoji {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.award-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.award-desc {
-  color: #cccccc;
-  line-height: 1.4;
-}
-
-.charts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.bar-row {
-  margin: 12px 0;
-}
-
-.bar-info {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.bar-track {
-  height: 12px;
-  background-color: #333333;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  background-color: #ff8c42;
-  border-radius: 10px;
-}
-
-.long-message {
-  max-height: 160px;
-  overflow: auto;
-  line-height: 1.5;
-  color: #dddddd;
-}
-
-.footer-note {
-  text-align: center;
-  color: #888888;
-  font-size: 13px;
-  margin-top: 30px;
-}
-
-@media (max-width: 800px) {
-  h1 {
-    font-size: 42px;
-  }
-
-  .top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .card-grid,
-  .awards,
-  .charts {
-    grid-template-columns: 1fr;
-  }
-
-  .big-card {
-    grid-column: span 1;
-  }
-}
-
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <main class="app">
     <section class="hero" id="hero">
       <div class="hero-card">
-        <div class="tag">Enjoy seeing your Whatsapp chats summarized with ChatWrapped!</div>
-        <h1><span class="gradient-text">ChatWrapped</span></h1>
+        <div class="tag">Enjoy seeing your Whatsapp chats summarized with Whatsapp Wrapped!</div>
+
+        <h1>Whatsapp Wrapped</h1>
+
         <p class="subtitle">
-          Upload an exported WhatsApp chat and turn it into a Wrapped dashboard with stats, activity patterns, top words, and emoji rankings.
+          Upload an exported WhatsApp chat and turn it into a Wrapped dashboard with stats,
+          activity patterns, top words, and emoji rankings.
         </p>
 
         <div class="upload-box">
           <input type="file" id="chatFile" accept=".txt" />
           <br />
-          <button id="analyzeButton">Create My ChatWrapped</button>
+          <button id="analyzeButton">Create My Whatsapp Wrapped</button>
           <p class="privacy">Your file stays in your browser. Nothing is uploaded anywhere.</p>
           <div class="error" id="errorBox"></div>
         </div>
@@ -283,7 +33,7 @@ button:hover {
 
     <section class="dashboard" id="dashboard">
       <div class="top-bar">
-        <h2>Your <span class="gradient-text">ChatWrapped</span></h2>
+        <h2>Your Whatsapp Wrapped</h2>
         <button class="reset-btn" id="resetButton">Analyze Another Chat</button>
       </div>
 
@@ -325,152 +75,316 @@ button:hover {
         </div>
       </div>
 
-      <h3 class="section-title">Wrapped Awards</h3>
-      <div class="awards" id="awards"></div>
-
       <h3 class="section-title">Chat Charts</h3>
+
       <div class="charts">
         <div class="card">
-          <div class="card-label">Messages by Person</div>
-          <div id="senderBars"></div>
-        </div>
-
-        <div class="card">
           <div class="card-label">Top Words</div>
-          <div id="wordBars"></div>
+          <div id="wordBars">—</div>
         </div>
 
         <div class="card">
           <div class="card-label">Top Emojis</div>
-          <div id="emojiBars"></div>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Most Active Hours</div>
-          <div id="hourBars"></div>
+          <div id="emojiBars">—</div>
         </div>
       </div>
-
-      <p class="footer-note">Made with HTML, CSS, and vanilla JavaScript.</p>
     </section>
   </main>
 
+  <script>
+    const chatFile = document.getElementById("chatFile");
+    const analyzeButton = document.getElementById("analyzeButton");
+    const resetButton = document.getElementById("resetButton");
+    const errorBox = document.getElementById("errorBox");
+    const hero = document.getElementById("hero");
+    const dashboard = document.getElementById("dashboard");
 
-<script>
-  const chatFile = document.getElementById("chatFile");
-  const analyzeButton = document.getElementById("analyzeButton");
-  const resetButton = document.getElementById("resetButton");
-  const errorBox = document.getElementById("errorBox");
-  const hero = document.getElementById("hero");
-  const dashboard = document.getElementById("dashboard");
+    analyzeButton.addEventListener("click", () => {
+      const file = chatFile.files[0];
 
-  analyzeButton.addEventListener("click", () => {
-    const file = chatFile.files[0];
+      if (!file) {
+        errorBox.textContent = "Please select a chat file to analyze.";
+        errorBox.style.display = "block";
+        return;
+      }
 
-    if (!file) {
-      errorBox.textContent = "Please select a chat file to analyze.";
-      errorBox.style.display = "block";
-      return;
+      errorBox.style.display = "none";
+
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const content = e.target.result;
+        const chatData = parseChat(content);
+
+        if (chatData.length === 0) {
+          errorBox.textContent = "No messages found. Try another WhatsApp exported .txt file.";
+          errorBox.style.display = "block";
+          return;
+        }
+
+        let totalWords = 0;
+
+        chatData.forEach((chat) => {
+          const words = chat.message.split(" ");
+          totalWords = totalWords + words.length;
+        });
+
+        const mostFrequentSender = findTopSender(chatData);
+        const activeDay = findTopDay(chatData);
+        const activeHour = findTopHour(chatData);
+        const longest = findLongestMessage(chatData);
+        const mostUsedWord = findTopWord(chatData);
+        const topEmoji = findTopEmoji(chatData);
+
+        document.getElementById("totalMessages").textContent = chatData.length;
+        document.getElementById("totalWords").textContent = totalWords;
+
+        document.getElementById("messageSummary").textContent =
+          "Your chat has " + chatData.length + " messages and " + totalWords + " words.";
+
+        document.getElementById("topSender").textContent =
+          mostFrequentSender.name + " sent " + mostFrequentSender.count + " messages";
+
+        document.getElementById("mostActiveDay").textContent =
+          activeDay.name + " with " + activeDay.count + " messages";
+
+        document.getElementById("mostActiveHour").textContent =
+          activeHour.name + ":00 with " + activeHour.count + " messages";
+
+        document.getElementById("longestMessage").textContent = longest.message;
+        document.getElementById("longestMessageInfo").textContent = "Sent by " + longest.sender;
+
+        document.getElementById("wordBars").textContent =
+          mostUsedWord.name + " appeared " + mostUsedWord.count + " times";
+
+        document.getElementById("emojiBars").textContent =
+          topEmoji.name + " appeared " + topEmoji.count + " times";
+
+        hero.style.display = "none";
+        dashboard.style.display = "block";
+      };
+
+      reader.readAsText(file);
+    });
+
+    resetButton.addEventListener("click", () => {
+      chatFile.value = "";
+      dashboard.style.display = "none";
+      hero.style.display = "flex";
+      errorBox.style.display = "none";
+    });
+
+    function parseChat(content) {
+      const lines = content.split("\n");
+      const messages = [];
+      let lastMessage = null;
+
+      lines.forEach((line) => {
+        line = line.trim();
+        line = line.replace(/\u200e/g, "");
+
+        const match = line.match(
+          /^\[?(\d{1,2}[\/\.-]\d{1,2}[\/\.-]\d{2,4}),?\s+(\d{1,2}:\d{2}(?::\d{2})?)(?:\s?([AP]M))?\]?\s?-?\s?([^:]+):\s?(.*)$/i
+        );
+
+        if (match) {
+          const date = match[1];
+          const time = match[2];
+          const sender = match[4].trim();
+          const message = match[5].trim();
+
+          lastMessage = {
+            date: date,
+            time: time,
+            sender: sender,
+            message: message
+          };
+
+          messages.push(lastMessage);
+        } else if (lastMessage && line !== "") {
+          lastMessage.message = lastMessage.message + " " + line;
+        }
+      });
+
+      return messages;
     }
 
-    errorBox.style.display = "none";
-
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      const content = e.target.result;
-      const chatData = parseChat(content);
-
-      let totalWords = 0;
+    function findTopSender(chatData) {
+      const senderCount = {};
 
       chatData.forEach((chat) => {
-        const words = chat.message.split(" ");
-        totalWords = totalWords + words.length;
+        const sender = chat.sender;
+
+        if (senderCount[sender]) {
+          senderCount[sender]++;
+        } else {
+          senderCount[sender] = 1;
+        }
       });
 
-      const mostFrequentSender = findTopSender(chatData);
+      let topSender = "";
+      let topCount = 0;
 
-      console.log(chatData);
-
-      document.getElementById("totalMessages").textContent = chatData.length;
-      document.getElementById("totalWords").textContent = totalWords;
-
-      document.getElementById("topSender").textContent =
-        mostFrequentSender.name + " sent " + mostFrequentSender.count + " messages";
-
-      hero.style.display = "none";
-      dashboard.style.display = "block";
-    };
-
-    reader.readAsText(file);
-  });
-
-  function parseChat(content) {
-    const lines = content.split("\n");
-    const messages = [];
-
-    lines.forEach((line) => {
-      const parts = line.split(" - ");
-
-      if (parts.length < 2) {
-        return;
+      for (let sender in senderCount) {
+        if (senderCount[sender] > topCount) {
+          topSender = sender;
+          topCount = senderCount[sender];
+        }
       }
 
-      const dateTime = parts[0];
-      const senderAndMessage = parts.slice(1).join(" - ");
-
-      const dateTimeParts = dateTime.split(",");
-      const date = dateTimeParts[0].trim();
-      const time = dateTimeParts[1] ? dateTimeParts[1].trim() : "Unknown";
-
-      const colonIndex = senderAndMessage.indexOf(":");
-
-      if (colonIndex === -1) {
-        return;
-      }
-
-      const sender = senderAndMessage.slice(0, colonIndex).trim();
-      const message = senderAndMessage.slice(colonIndex + 1).trim();
-
-      messages.push({
-        date: date,
-        time: time,
-        sender: sender,
-        message: message
-      });
-    });
-
-    return messages;
-  }
-
-  function findTopSender(chatData) {
-    const senderCount = {};
-
-    chatData.forEach((chat) => {
-      const sender = chat.sender;
-
-      if (senderCount[sender]) {
-        senderCount[sender]++;
-      } else {
-        senderCount[sender] = 1;
-      }
-    });
-
-    let topSender = "";
-    let topCount = 0;
-
-    for (let sender in senderCount) {
-      if (senderCount[sender] > topCount) {
-        topSender = sender;
-        topCount = senderCount[sender];
-      }
+      return {
+        name: topSender,
+        count: topCount
+      };
     }
 
-    return {
-      name: topSender,
-      count: topCount
-    };
-  }
-</script>
+    function findTopDay(chatData) {
+      const dayCount = {};
+
+      chatData.forEach((chat) => {
+        const day = chat.date;
+
+        if (dayCount[day]) {
+          dayCount[day]++;
+        } else {
+          dayCount[day] = 1;
+        }
+      });
+
+      let topDay = "";
+      let topCount = 0;
+
+      for (let day in dayCount) {
+        if (dayCount[day] > topCount) {
+          topDay = day;
+          topCount = dayCount[day];
+        }
+      }
+
+      return {
+        name: topDay,
+        count: topCount
+      };
+    }
+
+    function findTopHour(chatData) {
+      const hourCount = {};
+
+      chatData.forEach((chat) => {
+        const hour = chat.time.split(":")[0];
+
+        if (hourCount[hour]) {
+          hourCount[hour]++;
+        } else {
+          hourCount[hour] = 1;
+        }
+      });
+
+      let topHour = "";
+      let topCount = 0;
+
+      for (let hour in hourCount) {
+        if (hourCount[hour] > topCount) {
+          topHour = hour;
+          topCount = hourCount[hour];
+        }
+      }
+
+      return {
+        name: topHour,
+        count: topCount
+      };
+    }
+
+    function findLongestMessage(chatData) {
+      let longest = "";
+      let sender = "";
+
+      chatData.forEach((chat) => {
+        if (chat.message.length > longest.length) {
+          longest = chat.message;
+          sender = chat.sender;
+        }
+      });
+
+      return {
+        message: longest,
+        sender: sender
+      };
+    }
+
+    function findTopWord(chatData) {
+      const wordCount = {};
+
+      chatData.forEach((chat) => {
+        const words = chat.message
+          .toLowerCase()
+          .replace(/[.,!?()"]/g, "")
+          .split(" ");
+
+        words.forEach((word) => {
+          if (word.length > 2) {
+            if (wordCount[word]) {
+              wordCount[word]++;
+            } else {
+              wordCount[word] = 1;
+            }
+          }
+        });
+      });
+
+      let topWord = "";
+      let topCount = 0;
+
+      for (let word in wordCount) {
+        if (wordCount[word] > topCount) {
+          topWord = word;
+          topCount = wordCount[word];
+        }
+        
+      }
+      if (topWord =="omitted"){
+            topWord ="Stickers";
+        }
+
+      return {
+        name: topWord,
+        count: topCount
+      };
+    }
+
+    function findTopEmoji(chatData) {
+      const emojiCounts = {};
+
+      chatData.forEach((chat) => {
+        const emojis = chat.message.match(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu);
+
+        if (emojis) {
+          emojis.forEach((emoji) => {
+            if (emojiCounts[emoji]) {
+              emojiCounts[emoji]++;
+            } else {
+              emojiCounts[emoji] = 1;
+            }
+          });
+        }
+      });
+
+      let topEmoji = "No emoji";
+      let topCount = 0;
+
+      for (let emoji in emojiCounts) {
+        if (emojiCounts[emoji] > topCount) {
+          topEmoji = emoji;
+          topCount = emojiCounts[emoji];
+        }
+      }
+
+      return {
+        name: topEmoji,
+        count: topCount
+      };
+    }
+  </script>
 </body>
 </html>
