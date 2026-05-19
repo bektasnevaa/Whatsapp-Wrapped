@@ -24,10 +24,5 @@ The chat file is processed locally in the browser. It is not uploaded to any ser
 - CSS
 - JavaScript
 
-## How to Use
 
-1. Export a WhatsApp chat as a '.txt' file.
-2. Open 'index.html' in a browser.
-3. Upload the '.txt' file.
-4. View your WhatsApp Wrapped summary.
 
