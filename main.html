@@ -356,7 +356,7 @@ function parseChat(content) {
         .replaceAll(":", "")
         .replaceAll(";", "")
         .split(" ");
-      });
+     
         words.forEach((word) => {
           if (word.length > 2) {
             if (wordCount[word]) {
@@ -366,7 +366,7 @@ function parseChat(content) {
             }
           }
         });
-      };
+      });
 
       let topWord = "";
       let topCount = 0;
@@ -386,6 +386,7 @@ function parseChat(content) {
         name: topWord,
         count: topCount
       };
+      }
     
 
     function findTopEmoji(chatData) {
@@ -419,7 +420,8 @@ function parseChat(content) {
         name: topEmoji,
         count: topCount
       };
-    }
-  </script>
+}
+    
+</script>
 </body>
 </html>
