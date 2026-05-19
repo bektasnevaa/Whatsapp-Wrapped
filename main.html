@@ -174,40 +174,67 @@
       errorBox.style.display = "none";
     });
 
-    function parseChat(content) {
-      const lines = content.split("\n");
-      const messages = [];
-      let lastMessage = null;
+function parseChat(content) {
+  const lines = content.split("\n");
+  const messages = [];
 
-      lines.forEach((line) => {
-        line = line.trim();
-        line = line.replace(/\u200e/g, "");
+  lines.forEach((line) => {
+    line = line.trim();
+    line = line.replace(/\u200e/g, "");
 
-        const match = line.match(
-          /^\[?(\d{1,2}[\/\.-]\d{1,2}[\/\.-]\d{2,4}),?\s+(\d{1,2}:\d{2}(?::\d{2})?)(?:\s?([AP]M))?\]?\s?-?\s?([^:]+):\s?(.*)$/i
-        );
+    let date = "";
+    let time = "";
+    let senderAndMessage = "";
 
-        if (match) {
-          const date = match[1];
-          const time = match[2];
-          const sender = match[4].trim();
-          const message = match[5].trim();
+    if (line.includes(" - ")) {
+      const parts = line.split(" - ");
 
-          lastMessage = {
-            date: date,
-            time: time,
-            sender: sender,
-            message: message
-          };
+      if (parts.length < 2) {
+        return;
+      }
 
-          messages.push(lastMessage);
-        } else if (lastMessage && line !== "") {
-          lastMessage.message = lastMessage.message + " " + line;
-        }
-      });
+      const dateTime = parts[0];
+      senderAndMessage = parts.slice(1).join(" - ");
 
-      return messages;
+      const dateTimeParts = dateTime.split(",");
+      date = dateTimeParts[0].replace("[", "").trim();
+      time = dateTimeParts[1] ? dateTimeParts[1].replace("]", "").trim() : "Unknown";
+    } else if (line.includes("] ")) {
+      const parts = line.split("] ");
+
+      if (parts.length < 2) {
+        return;
+      }
+
+      const dateTime = parts[0].replace("[", "");
+      senderAndMessage = parts.slice(1).join("] ");
+
+      const dateTimeParts = dateTime.split(",");
+      date = dateTimeParts[0].trim();
+      time = dateTimeParts[1] ? dateTimeParts[1].trim() : "Unknown";
+    } else {
+      return;
     }
+
+    const colonIndex = senderAndMessage.indexOf(":");
+
+    if (colonIndex === -1) {
+      return;
+    }
+
+    const sender = senderAndMessage.slice(0, colonIndex).trim();
+    const message = senderAndMessage.slice(colonIndex + 1).trim();
+
+    messages.push({
+      date: date,
+      time: time,
+      sender: sender,
+      message: message
+    });
+  });
+
+  return messages;
+}
 
     function findTopSender(chatData) {
       const senderCount = {};
@@ -318,10 +345,18 @@
 
       chatData.forEach((chat) => {
         const words = chat.message
-          .toLowerCase()
-          .replace(/[.,!?()"]/g, "")
-          .split(" ");
-
+        .toLowerCase()
+        .replaceAll(".", "")
+        .replaceAll(",", "")
+        .replaceAll("!", "")
+        .replaceAll("?", "")
+        .replaceAll("(", "")
+        .replaceAll(")", "")
+        .replaceAll('"', "")
+        .replaceAll(":", "")
+        .replaceAll(";", "")
+        .split(" ");
+      });
         words.forEach((word) => {
           if (word.length > 2) {
             if (wordCount[word]) {
@@ -331,7 +366,7 @@
             }
           }
         });
-      });
+      };
 
       let topWord = "";
       let topCount = 0;
@@ -351,7 +386,7 @@
         name: topWord,
         count: topCount
       };
-    }
+    
 
     function findTopEmoji(chatData) {
       const emojiCounts = {};
