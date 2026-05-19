@@ -24,5 +24,10 @@ The chat file is processed locally in the browser. It is not uploaded to any ser
 - CSS
 - JavaScript
 
+## How to Use
 
-
+1. Download or clone the project.
+2. Open the project folder in VS Code.
+3. Run the project using Live Server
+4. Upload an exported WhatsApp `.txt` chat file.
+5. View your WhatsApp Wrapped summary.
